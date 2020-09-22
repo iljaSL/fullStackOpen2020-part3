@@ -65,8 +65,8 @@ app.post("/api/persons", (request, response) => {
   }
 
   const newPerson = new Person({
-    name: getBody.name,
-    number: getBody.number,
+    name: body.name,
+    number: body.number,
   });
 
   newPerson.save().then((result) => {
