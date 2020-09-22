@@ -1,0 +1,29 @@
+{
+  "name": "fullstackopen2020-part3",
+  "version": "1.0.0",
+  "description": "Part 3 of the full stack open course 2020. I needed to create a separate repo in order to deploy it later to Heroku.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iljaSL/fullStackOpen2020-part3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iljaSL/fullStackOpen2020-part3/issues"
+  },
+  "homepage": "https://github.com/iljaSL/fullStackOpen2020-part3#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  }
+}
