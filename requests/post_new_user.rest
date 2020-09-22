@@ -1,7 +1,7 @@
-POST http://localhost:3001/api/persons HTTP/1.1
+POST https://mysterious-cove-86773.herokuapp.com/api/persons HTTP/1.1
 content-Type: application/json
 
 {
-  "name": "Arto",
+  "name": "Arto Hellas",
   "number": "044444"
 }
