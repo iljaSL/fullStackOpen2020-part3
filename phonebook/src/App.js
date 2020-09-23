@@ -65,10 +65,16 @@ const App = () => {
           });
       }
     } else {
-      personServices.create(personObject).then((returnedPerson) => {
-        setPersons(persons.concat(returnedPerson));
-        notificationMessage(`${newName} added to the phonebook!`, "ok");
-      });
+      personServices
+        .create(personObject)
+        .then((returnedPerson) => {
+          setPersons(persons.concat(returnedPerson));
+          notificationMessage(`${newName} added to the phonebook!`, "ok");
+        })
+        .catch((error) => {
+          console.log(error.response.data.error);
+          notificationMessage(error.response.data.error, "error");
+        });
     }
   };
 
