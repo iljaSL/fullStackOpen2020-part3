@@ -1,10 +1,10 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 if (process.argv.length < 3) {
-  console.log(
-    "Please provide the password as an argument: node mongo.js <password>"
-  );
-  process.exit(1);
+	console.log(
+		'Please provide the password as an argument: node mongo.js <password>'
+	);
+	process.exit(1);
 }
 
 const password = process.argv[2];
@@ -15,24 +15,24 @@ const url = `mongodb+srv://root:${password}@cluster0.vk3ra.mongodb.net/phonebook
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const personSchema = new mongoose.Schema({
-  name: String,
-  number: String,
+	name: String,
+	number: String,
 });
 
-const Person = mongoose.model("person", personSchema);
+const Person = mongoose.model('person', personSchema);
 
 if (process.argv.length === 3) {
-  Person.find({}).then((persons) => {
-    console.log("phonebook:");
-    persons.forEach((person) => {
-      console.log(`${person.name} ${person.number}`);
-    });
-    mongoose.connection.close();
-  });
+	Person.find({}).then((persons) => {
+		console.log('phonebook:');
+		persons.forEach((person) => {
+			console.log(`${person.name} ${person.number}`);
+		});
+		mongoose.connection.close();
+	});
 } else {
-  const person = new Person({ name, number });
-  person.save().then((persons) => {
-    console.log(`${persons.name}: ${persons.number} added to phonebook`);
-    mongoose.connection.close();
-  });
+	const person = new Person({ name, number });
+	person.save().then((persons) => {
+		console.log(`${persons.name}: ${persons.number} added to phonebook`);
+		mongoose.connection.close();
+	});
 }
